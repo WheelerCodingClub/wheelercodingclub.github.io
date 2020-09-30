@@ -108,10 +108,10 @@ footer a:hover i {
     padding: 20vh 15px;
     text-align: center;
     color: white;
+    background-position: center;
 }
 .splash-header.blue-splash {
-    background-image: linear-gradient(to bottom, #0066cc, #d1e8ff);
-    color: black;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('../../images/learning.webp');
 }
 .splash-header .hero-text {
     margin-left: 0;
@@ -140,8 +140,11 @@ footer a:hover i {
 .content-container p {
     font-size: 1.25rem;
 }
-.content-container .row {
+.content-container:not(#coding-resources) .row {
     margin: 5vh auto;
+}
+.content-container#coding-resources .row {
+    padding-top: 5vh;
 }
 .content-container a {
     color: #004696;

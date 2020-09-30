@@ -47,7 +47,7 @@
         </div>
 
         <!-- CODING RESOURCES -->
-        <div class="content-container">
+        <div id="coding-resources" class="content-container">
             <div class="container">
                 <div id="basics" class="row">
                     <div class="col-md-12">
@@ -72,9 +72,11 @@
                         </h2>
                         <br>
 
-                        <h3>Getting Set Up</h3>
+                        <p>Coming soon</p>
 
-                        <h3>Project Ideas</h3>
+                        <!--<h3>Getting Set Up</h3>
+
+                        <h3>Project Ideas</h3>-->
                         
                     </div>
                 </div>
@@ -89,13 +91,44 @@
                         <br>
 
                         <h3>Getting Set Up</h3>
-
-                        <h3>Basics</h3>
-                        <p>I recommend learning about HTML, CSS, and JavaScript before using web frameworks. These 3 languages are the most important web languages.</p>
                         <ul>
                             <li>
-                                <h4>W3Schools</h4>
-                                <p><a target="_blank" href="https://www.w3schools.com/">W3Schools</a> is one of the best general resources when it comes to web development.</p>
+                                <p>I recommend <a target="_blank" href="https://code.visualstudio.com/">Visual Studio Code (VS Code)</a> as an IDE.</p>
+                            </li>
+                            <li>
+                                <p>This isn't necessary, but I prefer to use <a target="_blank" href="https://git-scm.com/downloads">Git Bash</a> as an integrated terminal in VS Code. If you need help configuring it, you can consult <a target="_blank" href="https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration">this</a>.</p>
+                            </li>
+                            <li>
+                                <p>For both frontend and backend web development, you'll likely need to install <a target="_blank" href="https://nodejs.org/en/">Node.js and Node Package Manager (which comes with Node.js)</a></p>
+                            </li>
+                            <li>
+                                <p>For backend web development, additional installations (including other IDEs) may be needed depending on your choice of framework. For IDEs and required installations for specific programming languages, see <a href="#basics">THE BASICS</a> section.</p>
+                            </li>
+                        </ul>
+
+                        <h3>Basics</h3>
+                        <p>I recommend learning about HTML, CSS, and JavaScript before using web frameworks. These 3 languages are the most important web languages. After that, move on to frontend web development and design, and once you become familiar with frontend, you should move on to backend development. Here are the best general web development resources:</p>
+                        <ul>
+                            <li>
+                                <h4><a target="_blank" href="https://www.w3schools.com/">W3Schools</a></h4>
+                            </li>
+                            <li>
+                                <h4><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn">MDN Web Docs</a></h4>
+                            </li>
+                        </ul>
+                        <p>Also, I'd recommend learning about the following (this stuff is mostly conceptual at a beginner level, but you'll become more familiar with it as you begin implementing it):</p>
+                        <ul>
+                            <li>
+                                <h4><a target="_blank" href="https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/">APIs</a></h4>
+                            </li>
+                            <li>
+                                <h4><a target="_blank" href="https://www.sitepoint.com/developers-rest-api/">REST API</a></h4>
+                            </li>
+                            <li>
+                                <h4><a target="_blank" href="https://www.w3schools.com/xml/ajax_intro.asp">AJAX</a></h4>
+                            </li>
+                            <li>
+                                <h4><a target="_blank" href="https://www.tutorialspoint.com/mvc_framework/index.htm">Model-view-controller</a></h4>
                             </li>
                         </ul>
 
@@ -118,11 +151,62 @@
                         </ul>
 
                         <h3>Frontend Web Development</h3>
+                        <p>Frontend web development mainly involves coding the user interface/user experience (UI/UX) of a webpage. You can use vanilla JavaScript for frontend web development, and I'd suggest doing at least one project using vanilla JS to become familiar with it, but frameworks make development easier. Here's a few of the top frontend frameworks worth learning how to use:</p>
+                        <ul>
+                            <li>
+                                <h4><a target="_blank" href="https://jquery.com/">jQuery</a></h4>
+                                <p>jQuery is very easy to learn and it's convenient, but it's slowly becoming outdated in the web development community in favor of other frameworks. Nonetheless, it's good to know it - I just don't recommend it being the only frontend framework you learn.</p>
+                                <p><a target="_blank" href="https://www.w3schools.com/jquery/">W3Schools jQuery Tutorial</a></p>
+                            </li>
+                            <li>
+                                <h4><a target="_blank" href="https://reactjs.org/">React</a></h4>
+                                <p>React is one of the most popular frameworks right now. It's harder to learn initially, but it makes your code more organized (which is better for long-term projects that need to be maintained), and it's better to use React rather than jQuery for large projects.</p>
+                                <p><a target="_blank" href="https://reactjs.org/tutorial/tutorial.html">Official React Tutorial</a></p>
+                                <p><a target="_blank" href="https://www.youtube.com/watch?v=sBws8MSXN7A">YouTube - React Crash Course</a></p>
+                            </li>
+                            <li>
+                                <h4>Other frameworks worth researching:</h4>
+                                <p>Angular, Vue.js, Ember.js, Svelte</p>
+                            </li>
+                        </ul>
 
                         <h3>Backend Web Development</h3>
+                        <p>Backend development essentially gives a website its functionality and makes a website dynamic; it allows users to make accounts and generate posts on your website. Depending on your needs, you might need to learn an additional programming language for backend web development. Here's a few notable frameworks in various languages:</p>
+                        <ul>
+                            <li>
+                                <h4>Express (JavaScript)</h4>
+                                <p>If you're already familiar with JavaScript, Express would be easiest for you since it's a framework for Node.js, which is a JS runtime environment. Node.js has a lot of various packages as well, which is helpful for large projects.</p>
+                                <p><a target="_blank" href="https://nodejs.org/en/">Get Node.js</a></p>
+                                <p><a target="_blank" href="https://expressjs.com/en/starter/installing.html">Installing Express</a></p>
+                                <p><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction">Express Tutorial</a></p>
+                            </li>
+                            <li>
+                                <h4>Django (Python)</h4>
+                                <p>If you're coming from a Python background, this might be easiest for you.</p>
+                                <p><a target="_blank" href="https://docs.djangoproject.com/en/3.1/">Docs</a></p>
+                                <p><a target="_blank" href="https://docs.djangoproject.com/en/3.1/intro/tutorial01/">Official Django Tutorial</a></p>
+                            </li>
+                            <li>
+                                <h4>MySQL (not a framework)</h4>
+                                <p>If you use a framework that supports ORM (object-relational mapping), you won't need to write raw SQL queries, but it's still good to know SQL because it teaches you how to best store data.</p>
+                                <p><a target="_blank" href="https://www.w3schools.com/sql/">W3Schools SQL Tutorial</a></p>
+                            </li>    
+                            <li>
+                                <h4>Other frameworks worth researching:</h4>
+                                <p>Next.js (JavaScript), Laravel (PHP), Ruby on Rails (Ruby), Spring (Java)</p>
+                            </li>
+                        </ul>
 
                         <h3>Project Ideas</h3>
-
+                        <p>The best way to learn is through doing projects! Through trial and error, you'll gain experience. If you get stuck, Google how to do something or ask for help in the Coding Club Discord server. If you have a website idea in mind, pick a frontend and/or backend framework and try to implement it. If you need project ideas, here's a list of ideas to inspire you:</p>
+                        <ul>
+                            <li><p>A hangman game</p></li>
+                            <li><p>A quiz game</p></li>
+                            <li><p>A personal/portfolio site about you</p></li>
+                            <li><p>Use the giphy API</p></li>
+                            <li><p>Task list/a productivity app</p></li>
+                            <li><p>A chat app</p></li>
+                        </ul>
                     </div>
                 </div>
                 <div id="app-dev" class="row">
@@ -135,23 +219,23 @@
                         </h2>
                         <br>
 
-                        <h3>Getting Set Up</h3>
+                        <!--<h3>Getting Set Up</h3>-->
 
                         <h3>General Resources</h3>
                         <ul>
                             <li><h4>Flutter</h4></li>
                             <p>Flutter can be used for both iOS and Android development simultaneously. It's flexible because it lets you choose whichever IDE you prefer.</p>
-                            <p><a target="_blank" href="https://www.youtube.com/watch?v=1ukSR1GRtMU&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ">YouTube Tutorial</a></p>
+                            <p><a target="_blank" href="https://www.youtube.com/watch?v=1ukSR1GRtMU&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ">YouTube Tutorials</a></p>
                             <p><a target="_blank" href="https://flutter.dev/docs">Docs</a></p>
                             <p><a target="_blank" href="https://pub.dev/">Packages</a></p>
                         </ul>
 
-                        <h3>Android</h3>
+                        <!--<h3>Android</h3>
 
                         <h3>iOS</h3>
 
                         <h3>Project Ideas</h3>
-
+                        -->
                     </div>
                 </div>
                 <div id="game-dev" class="row">
@@ -163,13 +247,13 @@
                             </a>
                         </h2>
                         <br>
-
-                        <h3>Getting Set Up</h3>
+                        <p>Coming soon</p>
+                        <!--<h3>Getting Set Up</h3>
 
                         <h3>Unity</h3>
 
-                        <h3>Project Ideas</h3>
-
+                        <h3>Project Ideas</h3>-->
+                        
                     </div>
                 </div>
             </div>
