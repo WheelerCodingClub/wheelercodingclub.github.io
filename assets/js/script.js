@@ -19,12 +19,13 @@ $('.copy-anchor').click(function(e) {
 $(document).ready(function() {
     $(window).scroll();
 
-    $('[data-toggle="tooltip"]').tooltip({ 
-        trigger: 'hover',
-    }); 
     $('.copy-anchor').tooltip({ 
         trigger: 'manual',
     }); 
+    $('[data-toggle="tooltip"]').tooltip({ 
+        trigger: 'hover',
+    }); 
+    
 });
 
 $(document).scroll(function() {
