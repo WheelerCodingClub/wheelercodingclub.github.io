@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     $('.copy-anchor').tooltip({ 
         trigger: 'manual',
-    }); 
+    });
     $('[data-toggle="tooltip"]').tooltip({ 
         trigger: 'hover',
     }); 
