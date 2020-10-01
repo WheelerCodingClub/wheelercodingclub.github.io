@@ -2,6 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto Mono', Futura, sans-serif, monospace;
+    overflow-x: hidden;
 }
 .bg-light {
     background-color: whitesmoke;
@@ -12,20 +13,46 @@ body, html {
 
 /* NAVBAR */
 .navbar {
-    padding: 0 15px;
+    padding: 10px 15px;
     font-size: 25px;
+    background: transparent !important;
+    color: white !important;
+    transition: all .5s;
+}
+.navbar-toggler {
+    border-color: rgba(255,255,255,.5) !important;
 }
 .navbar .navbar-collapse {
-    padding: 15px 0;
+    padding: 0 0;
 }
 .navbar .navbar-brand {
     font-size: 30px;
     font-weight: 900;
     letter-spacing: .30rem;
-    color: black !important;
+    color: white !important;
+    transition: all .5s;
+
+}
+
+.navbar.scrolled {
+    font-size: 20px;
+    transition: all .5s;
+    padding: 5px 15px;
+    background: black !important;
+}
+.navbar.scrolled .navbar-brand {
+    font-size: 22px;
+    transition: all .5s;
+
+}
+.navbar.scrolled .navbar-brand img {
+    height: 45px;
+    transition: all .5s;
+
 }
 
 .navbar .navbar-brand img {
+    margin-right: 15px;
     height: 50px;
     width: auto;
 }
@@ -33,12 +60,27 @@ body, html {
 @media only screen and (max-width: 768px) {
     .navbar {
         font-size: 22px;
+        padding: 5px 10px;
+        background: black !important;
+        transition: all .5s;
     }
-    
+    .navbar.scrolled {
+        padding: 5px 10px;
+        transition: all .5s;
+    }
+    .navbar.scrolled .navbar-brand {
+        font-size: 20px;
+    }
+    .navbar .navbar-brand img {
+        margin-right: 5px;
+        transition: all .5s;
+
+    }
     .navbar .navbar-brand {
         margin-right: 5px;
         font-size: 20px;
         letter-spacing: .1rem;
+        transition: all .5s;
     }
     
 
@@ -56,11 +98,10 @@ body, html {
     position: relative;
     padding: 0.1rem 0;
     margin: auto .5rem;
-    color: black !important;
-    transition: all .5s;
+    color: white !important;
 }
 .navbar .nav-item .nav-link:hover {
-    color: black;
+    color: white;
 }
 .navbar .nav-item .nav-link::after {
     content: "";

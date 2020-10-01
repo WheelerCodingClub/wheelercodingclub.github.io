@@ -16,8 +16,22 @@ $('.copy-anchor').click(function(e) {
     }, 2000)
 });
 
-$(function () {
+$(document).ready(function() {
+    $(window).scroll();
+
     $('[data-toggle="tooltip"]').tooltip({ 
+        trigger: 'hover',
+    }); 
+    $('.copy-anchor').tooltip({ 
         trigger: 'manual',
-    });
+    }); 
+});
+
+$(document).scroll(function() {
+    if ($(window).scrollTop() > 50) {
+        $(".navbar").addClass('scrolled');
+
+    } else {
+        $(".navbar").removeClass('scrolled');
+    }
 });
