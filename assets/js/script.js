@@ -24,15 +24,15 @@ $(document).ready(function() {
     });
     $('[data-toggle="tooltip"]').tooltip({ 
         trigger: 'hover',
-    }); 
+    });
     
 });
 
-$(document).scroll(function() {
+$(window).scroll(function() {
+    // scrolled main nav
     if ($(window).scrollTop() > 50) {
-        $(".navbar").addClass('scrolled');
-
+        $("#main-nav").addClass('scrolled');
     } else {
-        $(".navbar").removeClass('scrolled');
+        $("#main-nav").removeClass('scrolled');
     }
 });
