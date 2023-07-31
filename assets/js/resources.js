@@ -37,5 +37,4 @@ $(".show-more-link").click(function() {
         elementToShow.css("height", "0px");
         $(".show-more", this).removeClass("active");
     }
-    
 });
