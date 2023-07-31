@@ -2,12 +2,7 @@ $('.copy-anchor').click(function(e) {
     e.preventDefault();
     var url = $(this).prop('href');
 
-    document.addEventListener('copy', function(e) {
-        e.clipboardData.setData('text/plain', url);
-        e.preventDefault();
-    }, true);
-
-    document.execCommand('copy');
+    navigator.clipboard.writeText(url);
 
     $(this).tooltip("show");
     var tooltip = $(this);
