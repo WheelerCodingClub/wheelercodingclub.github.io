@@ -1,0 +1,137 @@
+---
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fontsource/roboto-mono/400.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "~/styles/style.css";
+
+import { Image } from "astro:assets";
+
+import appleTouchIcon from "~/assets/icons/apple-touch-icon.png";
+import favicon32 from "~/assets/icons/favicon-32x32.png";
+import favicon16 from "~/assets/icons/favicon-16x16.png";
+
+import logo from "~/assets/images/logo.png";
+
+export interface Props {
+    title: string;
+    description?: string;
+    page?: "home" | "resources";
+    og?: {
+        title?: string;
+        image?: string;
+    };
+}
+
+const { title, description, page, og } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{title}</title>
+
+        <link rel="canonical" href={Astro.url}>
+        <link rel="sitemap" href="/sitemap-index.xml">
+
+        <meta name="generator" content={Astro.generator}>
+        <meta name="description" content={description}>
+
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Wheeler Coding Club">
+        <meta property="og:url" content={Astro.url}>
+        <meta property="og:description" content={description}>
+        {og?.title && <meta property="og:title" content={og.title} />}
+        {og?.image && <meta property="og:image" content={og.image} />}
+
+        <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src}>
+        <link rel="icon" type="image/png" sizes="32x32" href={favicon32.src}>
+        <link rel="icon" type="image/png" sizes="16x16" href={favicon16.src}>
+        <link rel="manifest" href="/site.webmanifest">
+    </head>
+    <body>
+        {/* NAVBAR */}
+        <nav id="main-nav" class="navbar fixed-top navbar-expand-md navbar-dark">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <Image src={logo} alt="" /><span>CODING CLUB</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class:list={["nav-item", page === "home" && "active"]}>
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        {/*
+                        <li class:list={["nav-item", page === "about" && "active"]}>
+                            <a class="nav-link" href="/about/">About</a>
+                        </li>
+                        */}
+                        <li class:list={["nav-item", page === "resources" && "active"]}>
+                            <a class="nav-link" href="/resources/">Resources</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <slot />
+
+        {/* FOOTER */}
+        <footer class="bg-light p-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 py-4 mb-md-5">
+                        <h6>Quick Links</h6>
+                        <hr>
+                        <a href="/">Home</a>
+                        <br>
+                        {/*
+                        <a href="/about/">About</a>
+                        <br>
+                        */}
+                        <a href="/resources/">Resources</a>
+                    </div>
+                    <div class="col-md-5 py-4 mb-md-5">
+                        <h6>Contact Us</h6>
+                        <hr>
+                        <a target="_blank" href="https://github.com/WheelerCodingClub"><i data-bs-toggle="tooltip" title="WheelerCodingClub" class="fab fa-github fa-3x"></i></a>
+                        <a target="_blank" href="mailto:wheelercodingclub@gmail.com"><i data-bs-toggle="tooltip" title="wheelercodingclub@gmail.com" class="fas fa-envelope fa-3x"></i></a>
+                    </div>
+                    <div class="col-md-5 py-4 mb-md-5">
+                        <h6>Feedback</h6>
+                        <hr>
+                        <p>If you have any feedback for Coding Club, <a target="_blank" href="https://forms.gle/5vvFmtFj4vUDVymNA">let us know</a>!</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
+
+<script>
+    import { Tooltip } from "bootstrap";
+
+    // initialize all hover tooltips
+    document.querySelectorAll("[data-bs-toggle='tooltip']").forEach((el) => {
+        new Tooltip(el, {
+            trigger: "hover",
+        });
+    });
+
+    // change navbar appearance when scrolled down
+    const nav = document.getElementById("main-nav")!;
+    const onScroll = () => {
+        if (window.scrollY > 50) {
+            nav.classList.add("scrolled");
+        } else {
+            nav.classList.remove("scrolled");
+        }
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+</script>

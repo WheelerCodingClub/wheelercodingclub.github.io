@@ -1,3 +1,3 @@
-# wheeler-coding-club
+# Website
 
-Wheeler Coding Club Website
+The Wheeler Coding Club website.

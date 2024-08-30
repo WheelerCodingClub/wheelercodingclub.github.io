@@ -1,0 +1,105 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "~/layouts/Layout.astro";
+
+import Splash from "~/components/Splash.astro";
+
+import code from "~/assets/images/code.png";
+import collaboration from "~/assets/images/collaboration.png";
+import community from "~/assets/images/community.png";
+import logo from "~/assets/images/logo.png";
+import splash from "~/assets/images/splash.jpg";
+---
+
+<Layout
+    title="Home - Wheeler Coding Club"
+    description="Learn more about Wheeler Coding Club."
+    page="home"
+    og={{
+        title: "Home",
+        image: logo.src,
+    }}
+>
+    <Splash image={splash.src}>
+        <h1 class="h2">Welcome to Wheeler Coding Club!</h1>
+        <h3>We are a community of coders who help each other learn.</h3>
+        <a target="_blank" href="https://forms.gle/KAZVW3x84fCW8uFX8" class="btn btn-danger btn-lg text-white">Join Us!</a>
+    </Splash>
+
+    {/* CLUB MISSION */}
+    <div class="content-container bg-light p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>OUR MISSION</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p><strong>Coding Club is dedicated to creating a community within Wheeler High School that lets members learn about and discuss any topics involving coding or programming.</strong></p>
+                    <p>We abide by the 3 C's: Coding, Community, and Collaboration.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {/* THE 3 C'S */}
+    <div id="three-c" class="content-container bg-blue p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>THE 3 C'S</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 order-2 order-md-1">
+                    <h3>Coding</h3>
+                    <p><strong>Coding Club provides resources</strong> for coders trying to learn more! You can check out our resources <strong><a href="resources.html">here</a></strong>.</p>
+                    <p>We encourage and facilitate <strong>project-based learning</strong>.</p>
+                </div>
+                <div class="col-md-4 order-1 order-md-2">
+                    <Image class="img-fluid" src={code} alt="" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 order-1 order-md-1">
+                    <Image class="img-fluid" src={community} alt="" />
+                </div>
+                <div class="col-md-8 order-2 order-md-2">
+                    <h3>Community</h3>
+                    <p>We have a <strong>community of coders</strong>. This means that when you join, you can meet new people, ask for help on your projects, and discuss tech.</p>
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-md-8 order-2 order-md12">
+                    <h3>Collaboration</h3>
+                    <p>We foster <strong>collaboration within our community</strong>. You can share your ideas, collaborate on projects, and share your final projects.</p>
+                </div>
+                <div class="col-md-4 order-1 order-md-2">
+                    <Image class="img-fluid" src={collaboration} alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {/* JOIN */}
+    <div id="join" class="content-container p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-5 mb-md-0">
+                    <h2>JOIN US!</h2>
+                    <br>
+                    <p>If you're interested in coding and currently attend Wheeler High School, you can join Wheeler Coding Club by filling out the form below.</p>
+                    <a target="_blank" href="https://forms.gle/KAZVW3x84fCW8uFX8" class="btn btn-danger text-white">Join!</a>
+                </div>
+                <div class="col-md-6 mt-5 mt-md-0">
+                    <h2>GUEST SPEAKERS</h2>
+                    <br>
+                    <p>If you have experience in a computer science field and want to speak to students about computer science, please reach out to us! We're always grateful for professionals willing to share their experiences in computer science fields.</p>
+                    <p>Please contact us at <a href="mailto:wheelercodingclub@gmail.com">wheelercodingclub@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
