@@ -20,6 +20,9 @@ a {
 a:hover {
     text-decoration: underline;
 }
+a.btn, a.navbar-brand, a.nav-link {
+    text-decoration: none;
+}
 .bg-light {
     background-color: whitesmoke;
 }
