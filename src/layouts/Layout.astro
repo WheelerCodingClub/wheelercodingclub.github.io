@@ -4,13 +4,12 @@ import "@fontsource/roboto-mono/400.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "~/styles/style.css";
 
-import { Image } from "astro:assets";
+import Footer from "~/components/Footer.astro";
+import Nav from "~/components/Nav.astro";
 
 import appleTouchIcon from "~/assets/icons/apple-touch-icon.png";
 import favicon32 from "~/assets/icons/favicon-32x32.png";
 import favicon16 from "~/assets/icons/favicon-16x16.png";
-
-import logo from "~/assets/images/logo.png";
 
 export interface Props {
     title: string;
@@ -51,65 +50,9 @@ const { title, description, page, og } = Astro.props;
         <link rel="manifest" href="/site.webmanifest">
     </head>
     <body>
-        {/* NAVBAR */}
-        <nav id="main-nav" class="navbar fixed-top navbar-expand-md navbar-dark">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="/">
-                    <Image src={logo} alt="" /><span>CODING CLUB</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto">
-                        <li class:list={["nav-item", page === "home" && "active"]}>
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        {/*
-                        <li class:list={["nav-item", page === "about" && "active"]}>
-                            <a class="nav-link" href="/about/">About</a>
-                        </li>
-                        */}
-                        <li class:list={["nav-item", page === "resources" && "active"]}>
-                            <a class="nav-link" href="/resources/">Resources</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+        <Nav page={page} />
         <slot />
-
-        {/* FOOTER */}
-        <footer class="bg-light p-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 py-4 mb-md-5">
-                        <h6>Quick Links</h6>
-                        <hr>
-                        <a href="/">Home</a>
-                        <br>
-                        {/*
-                        <a href="/about/">About</a>
-                        <br>
-                        */}
-                        <a href="/resources/">Resources</a>
-                    </div>
-                    <div class="col-md-5 py-4 mb-md-5">
-                        <h6>Contact Us</h6>
-                        <hr>
-                        <a target="_blank" href="https://github.com/WheelerCodingClub"><i data-bs-toggle="tooltip" title="WheelerCodingClub" class="fab fa-github fa-3x"></i></a>
-                        <a target="_blank" href="mailto:wheelercodingclub@gmail.com"><i data-bs-toggle="tooltip" title="wheelercodingclub@gmail.com" class="fas fa-envelope fa-3x"></i></a>
-                    </div>
-                    <div class="col-md-5 py-4 mb-md-5">
-                        <h6>Feedback</h6>
-                        <hr>
-                        <p>If you have any feedback for Coding Club, <a target="_blank" href="https://forms.gle/5vvFmtFj4vUDVymNA">let us know</a>!</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <Footer />
     </body>
 </html>
 
@@ -122,16 +65,4 @@ const { title, description, page, og } = Astro.props;
             trigger: "hover",
         });
     });
-
-    // change navbar appearance when scrolled down
-    const nav = document.getElementById("main-nav")!;
-    const onScroll = () => {
-        if (window.scrollY > 50) {
-            nav.classList.add("scrolled");
-        } else {
-            nav.classList.remove("scrolled");
-        }
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll);
 </script>
