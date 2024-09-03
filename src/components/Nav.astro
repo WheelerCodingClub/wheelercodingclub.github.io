@@ -38,8 +38,9 @@ const { page } = Astro.props;
 </nav>
 
 <script>
-    // change navbar appearance when scrolled down
     const nav = document.getElementById("main-nav")!;
+
+    // scrolled nav
     const onScroll = () => {
         nav.classList.toggle("scrolled", window.scrollY > 50);
     };
