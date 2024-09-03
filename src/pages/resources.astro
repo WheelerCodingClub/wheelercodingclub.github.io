@@ -604,11 +604,10 @@ import splash from "~/assets/images/learning.webp";
 
 <script>
     const nav = document.getElementById("resources-nav")!;
-    const fromTop = nav.offsetTop;
 
     // scrolled resources nav
     const onScroll = () => {
-        nav.classList.toggle("sticky-scroll", window.scrollY >= fromTop - 30);
+        nav.classList.toggle("sticky-scroll", window.scrollY >= nav.offsetTop - 30);
     }
     onScroll();
     window.addEventListener("scroll", onScroll);
