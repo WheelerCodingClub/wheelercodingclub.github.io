@@ -18,9 +18,11 @@
         "@astrojs/sitemap": "^3.1.6",
         "@astrojs/ts-plugin": "^1.10.1",
         "@fontsource/roboto-mono": "^5.0.19",
-        "@fortawesome/fontawesome-free": "^6.6.0",
+        "@iconify-json/fa6-solid": "^1.2.0",
+        "@iconify-json/mdi": "^1.2.0",
         "@types/bootstrap": "^5.2.10",
         "astro": "^4.15.3",
+        "astro-icon": "^1.1.1",
         "bootstrap": "^5.3.3",
         "sharp": "^0.33.5",
         "typescript": "^5.5.4"

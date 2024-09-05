@@ -278,14 +278,14 @@ footer a:hover i {
     color: inherit;
     text-decoration: none;
 }
-.resource-title-wrapper i.show-more {
-    position: absolute; 
+.resource-title-wrapper .show-more {
+    position: absolute;
     top: 10px;
-    left: -35px;
+    left: -45px;
     color: #212529;
     transition: all .2s ease-in-out;
 }
-.resource-title-wrapper i.show-more.active {
+.resource-title-wrapper .show-more.active {
     transform: rotate(90deg);
     color: #004696;
     transition: all .2s ease-in-out;

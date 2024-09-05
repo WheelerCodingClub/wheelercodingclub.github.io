@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 export interface Props {
     id: string;
 }
@@ -7,7 +9,7 @@ const { id } = Astro.props;
 ---
 
 <a href={`#${id}`} title="Copied link to clipboard!" class="copy-anchor">
-    <i class="fas fa-link fa-xs"></i>
+    <Icon name="fa6-solid:link" size="1em" />
 </a>
 
 <script>
@@ -28,3 +30,10 @@ const { id } = Astro.props;
         });
     });
 </script>
+
+<style>
+    /* align icon with text */
+    [data-icon] {
+        vertical-align: -0.125em;
+    }
+</style>

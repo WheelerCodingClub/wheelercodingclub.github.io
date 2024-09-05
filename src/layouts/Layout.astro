@@ -2,7 +2,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fontsource/roboto-mono/latin-400.css";
 import "@fontsource/roboto-mono/latin-700.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import "~/styles/style.css";
 
 import Footer from "~/components/Footer.astro";
@@ -58,12 +57,3 @@ const { title, description, page, og } = Astro.props;
         <Footer />
     </body>
 </html>
-
-<script>
-    import { Tooltip } from "bootstrap";
-
-    // initialize all hover tooltips
-    document.querySelectorAll("[data-bs-toggle='tooltip']").forEach((el) => {
-        new Tooltip(el);
-    });
-</script>
