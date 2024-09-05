@@ -5,7 +5,7 @@ export default defineConfig({
     integrations: [sitemap()],
     output: "static",
     site: "https://wheelercodingclub.github.io",
-    trailingSlash: "always",
+    trailingSlash: "ignore",
     redirects: {
         // Redirect for legacy reasons.
         "/wheeler-coding-club/": "/",
