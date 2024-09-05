@@ -15,7 +15,7 @@ const { id } = Astro.props;
 
     document.querySelectorAll(".copy-anchor").forEach((el) => {
         const tooltip = new Tooltip(el, {
-            trigger: "click",
+            trigger: "manual",
         });
         el.addEventListener("click", (e) => {
             e.preventDefault();
