@@ -176,6 +176,7 @@ a.btn, a.navbar-brand, a.nav-link {
     padding: 0 5px;
     left: 50%;
     bottom: -17.5px;
+    transform: translateX(-50%);
 }
 .sticky-scroll {
     background: white !important;
