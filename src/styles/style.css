@@ -14,12 +14,6 @@ body, html {
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
-a {
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
 a.btn, a.navbar-brand, a.nav-link {
     text-decoration: none;
 }
