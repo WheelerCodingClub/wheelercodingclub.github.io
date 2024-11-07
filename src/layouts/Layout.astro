@@ -12,16 +12,20 @@ import favicon32 from "~/assets/icons/favicon-32x32.png";
 import favicon16 from "~/assets/icons/favicon-16x16.png";
 
 export interface Props {
-    title: string;
+    prefix?: string;
+    title?: string;
     description?: string;
+    image?: string;
     page?: "home" | "resources";
-    og?: {
-        title?: string;
-        image?: string;
-    };
 }
 
-const { title, description, page, og } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+
+const { prefix, title, description, image, page } = Astro.props;
+
+const name = "Wheeler Coding Club";
+const pageTitle = title || (prefix && `${prefix} - ${name}`) || name;
+const objectTitle = title || prefix || name;
 ---
 
 <!DOCTYPE html>
@@ -29,30 +33,30 @@ const { title, description, page, og } = Astro.props;
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{title}</title>
 
-        <link rel="canonical" href={Astro.url}>
+        <link rel="canonical" href={canonical}>
         <link rel="sitemap" href="/sitemap-index.xml">
 
+        {description && <meta name="description" content={description} />}
         <meta name="generator" content={Astro.generator}>
-        <meta name="description" content={description}>
-
-        <meta property="og:type" content="website">
-        <meta property="og:site_name" content="Wheeler Coding Club">
-        <meta property="og:url" content={Astro.url}>
-        <meta property="og:description" content={description}>
-        {og?.title && <meta property="og:title" content={og.title} />}
-        {og?.image && <meta property="og:image" content={og.image} />}
 
         <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src}>
         <link rel="icon" type="image/png" sizes="32x32" href={favicon32.src}>
         <link rel="icon" type="image/png" sizes="16x16" href={favicon16.src}>
         <link rel="manifest" href="/site.webmanifest">
 
+        <meta property="og:site_name" content={name}>
+        <meta property="og:url" content={canonical}>
+        <meta property="og:title" content={objectTitle} />
+        {description && <meta property="og:description" content={description} />}
+        {image && <meta property="og:image" content={image} />}
+
+        <title>{pageTitle}</title>
+
         <slot name="head" />
     </head>
     <body>
-        <Nav page={page} />
+        <Nav {page} />
         <slot />
         <Footer />
     </body>
