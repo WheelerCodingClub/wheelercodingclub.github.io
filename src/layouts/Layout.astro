@@ -49,6 +49,8 @@ const { title, description, page, og } = Astro.props;
         <link rel="icon" type="image/png" sizes="32x32" href={favicon32.src}>
         <link rel="icon" type="image/png" sizes="16x16" href={favicon16.src}>
         <link rel="manifest" href="/site.webmanifest">
+
+        <slot name="head" />
     </head>
     <body>
         <Nav page={page} />
