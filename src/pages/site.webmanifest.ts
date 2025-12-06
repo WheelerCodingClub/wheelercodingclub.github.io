@@ -20,6 +20,11 @@ export const GET = () => {
             theme_color: "#ffffff",
             background_color: "#ffffff",
             display: "standalone",
-        })
+        }),
+        {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }
     );
 };
