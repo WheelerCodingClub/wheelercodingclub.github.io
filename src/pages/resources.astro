@@ -608,7 +608,7 @@ import splash from "~/assets/images/learning.webp";
     // scrolled resources nav
     const onScroll = () => {
         nav.classList.toggle("sticky-scroll", window.scrollY >= nav.offsetTop - 30);
-    }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll);
 
@@ -633,6 +633,6 @@ import splash from "~/assets/images/learning.webp";
     if (window.matchMedia("(min-width: 768px)").matches) {
         document.querySelectorAll(".show-more").forEach((icon) => {
             icon.classList.add("active");
-        })
+        });
     }
 </script>
