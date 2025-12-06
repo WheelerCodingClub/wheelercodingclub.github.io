@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "type": "module",
-    "packageManager": "pnpm@9.9.0",
+    "packageManager": "pnpm@9.10.0",
     "scripts": {
         "check": "astro check",
         "sync": "astro sync",
@@ -14,17 +14,17 @@
         "astro": "astro"
     },
     "devDependencies": {
-        "@astrojs/check": "^0.9.3",
-        "@astrojs/sitemap": "^3.1.6",
-        "@astrojs/ts-plugin": "^1.10.1",
-        "@fontsource/roboto-mono": "^5.0.19",
-        "@iconify-json/fa6-solid": "^1.2.0",
-        "@iconify-json/mdi": "^1.2.0",
+        "@astrojs/check": "^0.9.4",
+        "@astrojs/sitemap": "^3.2.1",
+        "@astrojs/ts-plugin": "^1.10.4",
+        "@fontsource/roboto-mono": "^5.1.0",
+        "@iconify-json/fa6-solid": "^1.2.1",
+        "@iconify-json/mdi": "^1.2.1",
         "@types/bootstrap": "^5.2.10",
-        "astro": "^4.15.3",
-        "astro-icon": "^1.1.1",
+        "astro": "^4.16.10",
+        "astro-icon": "^1.1.2",
         "bootstrap": "^5.3.3",
         "sharp": "^0.33.5",
-        "typescript": "^5.5.4"
+        "typescript": "^5.6.3"
     }
 }
