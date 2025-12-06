@@ -8,9 +8,7 @@ export interface Props {
 const { id } = Astro.props;
 ---
 
-<a href={`#${id}`} title="Copied link to clipboard!" class="copy-anchor">
-    <Icon name="fa6-solid:link" size="1em" />
-</a>
+<a href={`#${id}`} title="Copied link to clipboard!" class="copy-anchor"><Icon name="fa6-solid:link" size="1em" /></a>
 
 <script>
     import { Tooltip } from "bootstrap";
