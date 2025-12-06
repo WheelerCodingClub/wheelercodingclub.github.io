@@ -1,7 +1,7 @@
 import icon192 from "~/assets/icons/android-chrome-192x192.png";
 import icon512 from "~/assets/icons/android-chrome-512x512.png";
 
-export const GET = async () => {
+export const GET = () => {
     return new Response(
         JSON.stringify({
             name: "Wheeler Coding Club",
