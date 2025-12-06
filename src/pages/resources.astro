@@ -603,46 +603,37 @@ import splash from "~/assets/images/learning.webp";
 </Layout>
 
 <script>
-    import $ from "jquery";
+    const nav = document.getElementById("resources-nav")!;
+    const fromTop = nav.offsetTop;
 
-    $(document).on("ready", function() {
-        $(window).trigger("scroll");
+    // scrolled resources nav
+    const onScroll = () => {
+        nav.classList.toggle("sticky-scroll", window.scrollY >= fromTop - 30);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll);
 
-        // set category open arrows to active if screen width is greater than 768px 
-        // (because that is the screen size that height will be 100% based on the style.css)
-        if ($(".resource-content").height()! > 0) {
-            $(".show-more").addClass("active");
-        }
+    document.querySelectorAll(".show-more-link").forEach((link) => {
+        const section = document.getElementById(link.getAttribute("data-show")!)!;
+        const icon = link.querySelector(".show-more")!;
+        link.addEventListener("click", () => {
+            if (section.clientHeight === 0) {
+                // open if closed
+                section.style.height = "100%";
+                icon.classList.add("active");
+            } else {
+                // close if opened
+                section.style.height = "0";
+                icon.classList.remove("active");
+            }
+        });
     });
 
-    const fromTop = $("#resources-nav").offset()!.top;
-
-    $(window).on("resize", function() {
-        // check what to do with arrows when screen is resized
-        if ($(".resource-content").height()! > 0) {
-            $(".show-more").addClass("active");
-        } else {
-            $(".show-more").removeClass("active");
-        }
-    })
-
-    $(window).on("scroll", function() {
-        // scrolled resources nav
-        if ($(window).scrollTop()! >= fromTop - 30) {
-            $("#resources-nav").addClass("sticky-scroll");
-        } else {
-            $("#resources-nav").removeClass("sticky-scroll");
-        }
-    });
-
-    $(".show-more-link").on("click", function() {
-        const elementToShow = $("#" + $(this).attr("data-show"));
-        if (elementToShow.height() == 0) {
-            elementToShow.css("height", "100%");
-            $(".show-more", this).addClass("active");
-        } else {
-            elementToShow.css("height", "0px");
-            $(".show-more", this).removeClass("active");
-        }
-    });
+    // activate section open arrows if the screen width is greater than 768px
+    // (because that's the screen size the sections automatically open to based on the CSS)
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        document.querySelectorAll(".show-more").forEach((icon) => {
+            icon.classList.add("active");
+        })
+    }
 </script>
