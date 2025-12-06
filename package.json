@@ -26,5 +26,11 @@
         "bootstrap": "^5.3.3",
         "sharp": "^0.33.5",
         "typescript": "^5.7.3"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "esbuild",
+            "sharp"
+        ]
     }
 }
