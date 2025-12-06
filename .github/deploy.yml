@@ -1,0 +1,45 @@
+name: deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: setup pnpm
+        uses: pnpm/action-setup@v3
+
+      - name: install dependencies
+        shell: bash
+        run: pnpm install
+
+      - name: build site
+        shell: bash
+        run: pnpm run build
+
+      - name: upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "dist/"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: deploy site
+        id: deployment
+        uses: actions/deploy-pages@v4

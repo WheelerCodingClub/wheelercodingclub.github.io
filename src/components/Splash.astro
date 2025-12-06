@@ -1,0 +1,48 @@
+---
+export interface Props {
+    image: string;
+}
+
+const { image } = Astro.props;
+---
+
+{/* TODO: Don't use an inline style to add the image like this. */}
+<div class="splash-header" style={`background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(${JSON.stringify(image)})`}>
+    <div class="container">
+        <div class="hero-text">
+            <slot />
+        </div>
+    </div>
+</div>
+
+<style>
+    .splash-header {
+        width: 100%;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20vh 15px;
+        text-align: center;
+        color: white;
+        background-position: center;
+    }
+    .splash-header .hero-text {
+        margin-left: 0;
+        width: 100%;
+    }
+    .splash-header img {
+        max-width: 75%;
+    }
+    .splash-header .btn {
+        font-size: 1.15rem;
+    }
+    @media only screen and (max-width: 768px) {
+        .splash-header h2 {
+            font-size: 1.5rem;
+        }
+        .splash-header h3 {
+            font-size: 1.25rem;
+        }
+    }
+</style>

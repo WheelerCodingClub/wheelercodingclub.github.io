@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://wheelercodingclub.github.io/wheeler-coding-club/sitemap.xml

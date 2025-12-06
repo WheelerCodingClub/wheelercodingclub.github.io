@@ -1,0 +1,30 @@
+---
+export interface Props {
+    id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<a href={`#${id}`} title="Copied link to clipboard!" class="copy-anchor">
+    <i class="fas fa-link fa-xs"></i>
+</a>
+
+<script>
+    import { Tooltip } from "bootstrap";
+
+    document.querySelectorAll(".copy-anchor").forEach((el) => {
+        const tooltip = new Tooltip(el, {
+            trigger: "click",
+        });
+        el.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const url = (el as HTMLAnchorElement).href;
+            navigator.clipboard.writeText(url);
+
+            tooltip.show();
+            setTimeout(() => tooltip.hide(), 2000);
+        });
+    });
+</script>
